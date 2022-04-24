@@ -1,0 +1,62 @@
+
+@mixin generalStyle{
+
+    font-family:'Times New Roman', Times, serif;
+    margin:0;
+}
+
+
+@mixin textStyle($font,$fontWeight,$textColor){
+
+    font-size:$font;
+    font-weight:$fontWeight;
+    color:$textColor;
+    
+}
+
+@mixin hoverEffects{
+
+    &:hover{
+
+        color:darkviolet;
+    }
+}
+
+@mixin bodyStyle{
+
+    background-color:rgb(220, 93, 20);
+    padding:1rem;
+    height:600px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@mixin boxStyle{
+
+    box-shadow:0 4px 4px rgb(255, 174, 0) ;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+
+
+@mixin ResponsiveMedia($size){
+
+    @if($size == M){
+       
+        @media(max-width:786px){
+
+           @content;
+        }
+
+    }@else if($size == L){
+
+        @media(min-width:786px) and (max-width:1200px){
+
+            @content;
+        }
+    }
+
+
+}
